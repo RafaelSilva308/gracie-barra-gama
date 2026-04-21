@@ -748,7 +748,7 @@ window.addEventListener('touchmove', e => {
     // Layout: "GRACIE BARRA" above → separator → logo → separator → "GAMA · DF" below
 
     const logoR = 222;  // logo circle radius
-    const logoY = 472;  // logo circle center Y (true canvas center)
+    const logoY = 520;  // logo circle center Y — shifted down to give room for 2 text lines above
 
     // ── Glow text helper ──
     function glowText(text, x, y, color, shadowColor, size, spacing) {
@@ -790,15 +790,18 @@ window.addEventListener('touchmove', e => {
       ctx.restore();
     }
 
-    // 1. "GRACIE BARRA" — above logo (y=195, dist from center=317 < 499 ✓)
-    glowText('GRACIE BARRA', cx, 200, '#ffffff', '#cc1111', 58, 6);
+    // 1. "GRACIE BARRA" — top area
+    glowText('GRACIE BARRA', cx, 158, '#ffffff', '#cc1111', 56, 6);
 
-    // Top separator (y=228)
-    sepLine(228, 185);
-    diamond(cx - 196, 228, 3.5);
-    diamond(cx + 196, 228, 3.5);
+    // 2. "GAMA · DF" — right below "GRACIE BARRA"
+    glowText('GAMA  ·  DF', cx, 205, '#ff5858', '#990000', 42, 4);
 
-    // 2. Logo image clipped to circle (center 512,472 radius 222)
+    // Separator between text block and logo
+    sepLine(232, 175);
+    diamond(cx - 186, 232, 3.5);
+    diamond(cx + 186, 232, 3.5);
+
+    // 3. Logo image clipped to circle (center 512,520 radius 222)
     ctx.save();
     ctx.beginPath();
     ctx.arc(cx, logoY, logoR, 0, Math.PI * 2);
@@ -820,15 +823,6 @@ window.addEventListener('touchmove', e => {
     ctx.strokeStyle = 'rgba(255,72,50,0.90)';
     ctx.lineWidth = 4;
     ctx.stroke();
-
-    // 3. Bottom separator (y = 472+222+34 = 728)
-    const botSepY = logoY + logoR + 34;
-    sepLine(botSepY, 185);
-    diamond(cx - 196, botSepY, 3.5);
-    diamond(cx + 196, botSepY, 3.5);
-
-    // 4. "GAMA · DF" — below logo (y=790, dist from center=278 < 499 ✓)
-    glowText('GAMA  ·  DF', cx, botSepY + 60, '#ff5858', '#990000', 50, 4);
 
     const masked = new THREE.CanvasTexture(cv);
     masked.anisotropy = r2.capabilities.getMaxAnisotropy();
