@@ -22,7 +22,10 @@ jobs:
         with:
           ref: ${{ github.ref_name }}
       - name: Tooling
-        run: ffmpeg -version | head -1 && jq --version
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg >/dev/null
+          ffmpeg -version | head -1 && jq --version
       - name: Process manifest
         run: bash assets/pipeline/run.sh
       - name: Commit results
