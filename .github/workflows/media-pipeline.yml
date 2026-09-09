@@ -3,6 +3,9 @@ name: media-pipeline
 # extrai frames com ffmpeg e commita o resultado no branch atual.
 on:
   workflow_dispatch:
+  push:
+    branches: ['claude/**']
+    paths: ['assets/pipeline/manifest.json', 'assets/pipeline/run.sh', '.github/workflows/media-pipeline.yml']
 
 permissions:
   contents: write
