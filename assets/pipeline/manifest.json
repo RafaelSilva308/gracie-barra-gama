@@ -1,4 +1,27 @@
 [
-  {"id":"master-tatame-v1","kind":"image","url":"https://d8j0ntlcm91z4.cloudfront.net/user_3J5s6numzrSRcxC91ZPZGun7cQX/hf_20260909_143940_147d9a25-bba3-499a-ad8a-4e841125b989.png"},
-  {"id":"c1-hero","kind":"video","fps":10,"mfps":6,"dw":1280,"mw":960,"q":75,"url":"https://d8j0ntlcm91z4.cloudfront.net/user_3J5s6numzrSRcxC91ZPZGun7cQX/hf_20260909_145454_317ed19d-df3e-4a47-863e-1caa3ce43fe0.mp4"}
+  {
+    "id": "master-tatame-v1",
+    "kind": "image",
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3J5s6numzrSRcxC91ZPZGun7cQX/hf_20260909_143940_147d9a25-bba3-499a-ad8a-4e841125b989.png"
+  },
+  {
+    "id": "c1-hero",
+    "kind": "video",
+    "fps": 10,
+    "mfps": 6,
+    "dw": 1280,
+    "mw": 960,
+    "q": 75,
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3J5s6numzrSRcxC91ZPZGun7cQX/hf_20260909_145454_317ed19d-df3e-4a47-863e-1caa3ce43fe0.mp4"
+  },
+  {
+    "id": "c2-encontro",
+    "kind": "video",
+    "fps": 10,
+    "mfps": 6,
+    "dw": 1280,
+    "mw": 960,
+    "q": 75,
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3J5s6numzrSRcxC91ZPZGun7cQX/hf_20260909_150625_2f875f2f-dba4-40e0-b37c-e72bb03b686d.mp4"
+  }
 ]
